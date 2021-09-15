@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My page</title>
+  <style>
+      .container {
+          position: relative;
+          border: 5px solid blue;
+          padding: 20px;
+      }
+
+      .item {
+          color: red;
+          position: absolute;
+          top: 10px;
+          left: 10px;
+      }
+
+      .close {
+          position: absolute;
+          top: 2px;
+          right: 5px;
+          font-family: Arial;
+          font-size: 7pt;
+      }
+
+      .close:hover {
+          cursor: pointer;
+      }
+
+      .myBox {
+          width: 50px;
+          height: 50px;
+          background: blue;
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+      }
+
+      .ipsumText {
+          width: 700px;
+          height: 400px;
+          background: red;
+          overflow: scroll;
+      }
+  </style>
+</head>
+<body>
+  <!--<div class="container">
+    <div class="close">X</div>
+    Shows
+    <span class="item">the position</span>
+    of the element
+  </div>-->
+
+  <div class="myBox">
+
+  </div>
+
+  <div class="ipsumText">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus velit pellentesque vestibulum facilisis.
+      Maecenas sagittis tellus ut quam blandit, ac sollicitudin libero fermentum. Cras nec erat fermentum, rhoncus enim
+      ac, vehicula tellus. Mauris lobortis eget metus nec congue. Mauris eu ornare nisi. Vivamus vehicula enim ac tempus
+      elementum. Sed eget leo nulla.</p>
+
+    <p>Mauris sed imperdiet odio, eu lacinia libero. Curabitur laoreet urna ac sapien suscipit viverra. Maecenas gravida
+      dignissim orci in accumsan. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+      curae;
+      Mauris aliquet tincidunt odio non tincidunt. Maecenas sit amet leo quis turpis vulputate porta eu vel purus. Fusce
+      aliquet metus turpis, sed eleifend massa luctus convallis. Aliquam eget vulputate mi. Interdum et malesuada fames
+      ac
+      ante ipsum primis in faucibus. Vivamus aliquam et libero et finibus. Nunc fermentum odio metus, vitae cursus
+      turpis
+      lobortis vel.</p>
+
+    <p>Vestibulum vitae placerat nunc. Maecenas nec dolor eleifend, faucibus ex sit amet, condimentum lectus.
+      Suspendisse
+      ullamcorper id dolor in efficitur. Nam sodales mi sed nisl imperdiet scelerisque. Donec vitae ipsum lectus.
+      Aliquam
+      sagittis in eros eget ultricies. Aliquam eget libero eu orci dapibus faucibus sit amet vitae augue. Praesent
+      tempus
+      at mi sit amet maximus. Aliquam maximus cursus tristique. Phasellus laoreet dui sed velit auctor, id egestas magna
+      dignissim. Pellentesque fermentum, nisl vel consectetur gravida, nunc massa rhoncus odio, a fermentum quam arcu
+      sagittis urna. Suspendisse diam lacus, luctus vel tincidunt vel, tristique eu tortor. Donec ex leo, porttitor
+      consectetur dui sed, aliquet posuere elit. Integer vehicula maximus felis at suscipit.</p>
+
+    <p>Proin sodales purus sit amet posuere elementum. Aenean quis sodales orci. Morbi ullamcorper luctus diam a
+      feugiat.
+      In porttitor enim a magna suscipit sagittis. Proin elit odio, viverra eget dignissim feugiat, pretium at est.
+      Integer vel bibendum ligula, id pharetra nunc. Vivamus eu quam vel justo iaculis mattis quis vel orci. Maecenas
+      elementum justo sed mi tempus varius. Pellentesque placerat magna in cursus venenatis. Suspendisse tristique erat
+      urna, ut pharetra turpis molestie eget. Donec tempus a lacus non finibus. Proin eros felis, lacinia vestibulum
+      dolor
+      a, gravida viverra lorem. Vestibulum lacus orci, suscipit sed metus feugiat, porttitor porta orci.</p>
+
+    <p>Fusce finibus pellentesque leo, sed imperdiet lectus. Morbi eget cursus mi. Aliquam laoreet, risus vitae lobortis
+      ultricies, risus eros convallis turpis, eget vulputate risus purus ac nibh. Integer dictum massa risus, sit amet
+      pretium ante sollicitudin a. Sed eget facilisis dui. Donec sed urna vulputate, tempor turpis ac, venenatis turpis.
+      Mauris in bibendum ipsum, sed bibendum massa. Aliquam eu cursus urna.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus velit pellentesque vestibulum facilisis.
+      Maecenas sagittis tellus ut quam blandit, ac sollicitudin libero fermentum. Cras nec erat fermentum, rhoncus enim
+      ac, vehicula tellus. Mauris lobortis eget metus nec congue. Mauris eu ornare nisi. Vivamus vehicula enim ac tempus
+      elementum. Sed eget leo nulla.</p>
+
+    <p>Mauris sed imperdiet odio, eu lacinia libero. Curabitur laoreet urna ac sapien suscipit viverra. Maecenas gravida
+      dignissim orci in accumsan. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+      curae;
+      Mauris aliquet tincidunt odio non tincidunt. Maecenas sit amet leo quis turpis vulputate porta eu vel purus. Fusce
+      aliquet metus turpis, sed eleifend massa luctus convallis. Aliquam eget vulputate mi. Interdum et malesuada fames
+      ac
+      ante ipsum primis in faucibus. Vivamus aliquam et libero et finibus. Nunc fermentum odio metus, vitae cursus
+      turpis
+      lobortis vel.</p>
+
+    <p>Vestibulum vitae placerat nunc. Maecenas nec dolor eleifend, faucibus ex sit amet, condimentum lectus.
+      Suspendisse
+      ullamcorper id dolor in efficitur. Nam sodales mi sed nisl imperdiet scelerisque. Donec vitae ipsum lectus.
+      Aliquam
+      sagittis in eros eget ultricies. Aliquam eget libero eu orci dapibus faucibus sit amet vitae augue. Praesent
+      tempus
+      at mi sit amet maximus. Aliquam maximus cursus tristique. Phasellus laoreet dui sed velit auctor, id egestas magna
+      dignissim. Pellentesque fermentum, nisl vel consectetur gravida, nunc massa rhoncus odio, a fermentum quam arcu
+      sagittis urna. Suspendisse diam lacus, luctus vel tincidunt vel, tristique eu tortor. Donec ex leo, porttitor
+      consectetur dui sed, aliquet posuere elit. Integer vehicula maximus felis at suscipit.</p>
+
+    <p>Proin sodales purus sit amet posuere elementum. Aenean quis sodales orci. Morbi ullamcorper luctus diam a
+      feugiat.
+      In porttitor enim a magna suscipit sagittis. Proin elit odio, viverra eget dignissim feugiat, pretium at est.
+      Integer vel bibendum ligula, id pharetra nunc. Vivamus eu quam vel justo iaculis mattis quis vel orci. Maecenas
+      elementum justo sed mi tempus varius. Pellentesque placerat magna in cursus venenatis. Suspendisse tristique erat
+      urna, ut pharetra turpis molestie eget. Donec tempus a lacus non finibus. Proin eros felis, lacinia vestibulum
+      dolor
+      a, gravida viverra lorem. Vestibulum lacus orci, suscipit sed metus feugiat, porttitor porta orci.</p>
+
+    <p>Fusce finibus pellentesque leo, sed imperdiet lectus. Morbi eget cursus mi. Aliquam laoreet, risus vitae lobortis
+      ultricies, risus eros convallis turpis, eget vulputate risus purus ac nibh. Integer dictum massa risus, sit amet
+      pretium ante sollicitudin a. Sed eget facilisis dui. Donec sed urna vulputate, tempor turpis ac, venenatis turpis.
+      Mauris in bibendum ipsum, sed bibendum massa. Aliquam eu cursus urna.
+    </p>
+  </div>
+
+</body>
+</html>
