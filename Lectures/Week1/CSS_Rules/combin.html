@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Page</title>
+  <style>
+      /*.A .B {
+          color: red;
+      }*/
+
+      /*.A > .B {
+          color: red;
+      }*/
+
+      /*.C + .B {
+          color: red;
+      }*/
+
+      .C ~ .B {
+          color: red;
+      }
+
+      .A p {
+          color: blue;
+      }
+  </style>
+</head>
+<body>
+  <div class="A">
+    <p>Hey</p>
+    <p>How are you</p>
+    <p>I'm ok</p>
+    <span class="B">one</span>
+    <span class="C">two</span>
+    <span class="B">three</span>
+    <span class="B">four</span>
+    <div>
+      <span class="B">five</span>
+    </div>
+  </div>
+
+</body>
+</html>
