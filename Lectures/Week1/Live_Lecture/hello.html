@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <b>Hello</b>
+  <i>How are you</i>
+  <a href="https://google.com">Google</a>
+  <img id="unswimg" src="https://research.unsw.edu.au/sites/default/files/logo.png" alt="#"/>
+  <div style="background: red;">Whats up</div>
+  <marquee>Please stop Please stop Please stop Please stop Please stop</marquee>
+
+  <script>
+      const img = document.getElementById('unswimg');
+
+      function growImage() {
+          img.width += 10;
+      }
+
+      // img.addEventListener('click', growImage);
+      img.addEventListener('click', () => img.width += 10);
+  </script>
+</body>
+</html>
