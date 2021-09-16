@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My page</title>
+  <style>
+      .container {
+          display: flex;
+          flex-direction: row;
+          background: red;
+          width: 100%;
+          height: 300px;
+          align-items: stretch;
+          justify-content: center;
+      }
+
+      .element {
+          background: rgb(155, 155, 255);
+          flex: 1;
+          margin: 1px;
+      }
+
+      .pie {
+          flex: 1;
+          background: green;
+          margin: 1px;
+      }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="element">1</div>
+    <div class="element">2</div>
+    <div class="element" style="flex: 4; flex-direction: column; display: flex">
+      <div class="pie">A</div>
+      <div class="pie">B</div>
+      <div class="pie" style="flex: 2">C</div>
+    </div>
+  </div>
+
+</body>
+</html>
