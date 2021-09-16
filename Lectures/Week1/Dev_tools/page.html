@@ -1,0 +1,49 @@
+<html>
+<head>
+  <title>My Page</title>
+  <style type="text/css">
+      .container {
+          display: flex;
+          flex-direction: row;
+          background: red;
+          width: 100%;
+          height: 300px;
+          align-items: stretch;
+          justify-content: center;
+      }
+
+      .element {
+          background: rgb(155, 155, 255);
+          flex: 1;
+          margin: 1px;
+      }
+
+      .pie {
+          flex: 1;
+          background: green;
+          margin: 1px;
+      }
+
+      .hello {
+          font-size: 20pt;
+          font-family: arial;
+      }
+
+      .hello:hover {
+          background: #dfac5e;
+      }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="element">1</div>
+    <div class="element">2</div>
+    <div class="element" style="flex: 4; flex-direction: column; display: flex;">
+      <div class="pie"><span class="hello">Hello World</span></div>
+      <div class="pie">B</div>
+      <div class="pie" style="flex: 2;">C</div>
+    </div>
+  </div>
+  <div>End</div>
+</body>
+</html>
