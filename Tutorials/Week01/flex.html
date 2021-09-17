@@ -1,0 +1,57 @@
+<html>
+<head>
+  <title>Box</title>
+  <style>
+      #container {
+          width: 400px;
+          height: 200px;
+          display: flex;
+      }
+
+      .outer-left {
+          flex: 3;
+          background: black;
+          display: flex;
+          flex-direction: column;
+      }
+
+      .outer-right {
+          flex: 1;
+          background: red;
+      }
+
+      .inner-top {
+          flex: 1;
+          background: blue;
+      }
+
+      .inner-bottom {
+          flex: 3;
+          background: orange;
+          display: flex;
+      }
+
+      .inner-bottom-left {
+          flex: 2;
+          background: green;
+      }
+
+      .inner-bottom-right {
+          flex: 1;
+          background: yellow;
+      }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="outer-left">
+      <div class="inner-top"></div>
+      <div class="inner-bottom">
+        <div class="inner-bottom-left"></div>
+        <div class="inner-bottom-right"></div>
+      </div>
+    </div>
+    <div class="outer-right"></div>
+  </div>
+</body>
+</html>
