@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+      .container {
+          display: grid;
+          grid-template-columns: 2fr 2fr 2fr;
+          grid-template-rows: 2fr 2fr 2fr;
+          height: 100%;
+          grid-template-areas:
+              "header header header"
+              "sidebar main main"
+              "footer footer footer";
+      }
+
+      .header {
+          grid-area: header;
+          background: red;
+      }
+
+      .sidebar {
+          grid-area: sidebar;
+          background: blue;
+      }
+
+      .main {
+          grid-area: main;
+          background: green;
+      }
+
+      .footer {
+          grid-area: footer;
+          background: yellow;
+      }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">Header!</div>
+    <div class="sidebar">Siderbar</div>
+    <div class="main">Main</div>
+    <div class="footer">Footer</div>
+  </div>
+
+</body>
+</html>
