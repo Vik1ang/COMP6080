@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>Invite friends</title>
+    <style type="text/css">
+    body {
+      font-family: arial;
+      text-align:  center;
+      margin:  0;
+    }
+    .email-box {
+      margin: 10px 0;
+    }
+    .button-area {
+      margin: 10px 0;
+    }
+    #email-box-template {
+      display: none;
+    }
+    </style>
+	</head>
+	<body>
+
+    <div id="my-modal" style="display: none; background: rgba(255,255,255,0.8); height: 100%; width: 100%; position: fixed;">
+      <div style="background: rgb(200,200,255); width: 80%; max-width: 400px; height: 50%; margin-top: 50px; margin-left: auto; margin-right: auto; padding: 20px;">
+
+        Popup!
+        
+        <div id="email-info"></div>
+        <button id="confirm-popup">Confirm</button>
+        <button id="cancel-popup">Cancel</button>
+
+      </div>
+    </div>
+
+  	<h4 id="invite-heading">Please invite your friends to join CSE</h4>
+
+  	<p>Welcome message:</p>
+  	<textarea id="welcome-message"></textarea>
+
+    <form>
+    	<div id="email-box-list"></div>
+      <div class="button-area">
+    	  <button id="add-more-email-fields">Add more</button> 
+      </div>
+      <div class="button-area">
+    	  <button id="submit">Submit</button> <!-- Has a submit button that when clicked, provides a summary screen, before allowing the user to cancel or continue.-->
+      </div>
+    </form>
+    <div id="email-box-template">
+      <label>Email <span class="email-number"></span>:
+        <input type="email" placeholder="Email Address"  />
+      </label>
+    </div>
+    <script type="text/javascript" src="run.js"></script>
+  </body>
+</html>
