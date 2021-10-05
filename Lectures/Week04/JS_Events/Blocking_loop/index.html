@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blocking the Loop</title>
+  <style>
+      #outer-container {
+          display: flex;
+          justify-content: space-around;
+      }
+
+      .text-readout {
+          text-align: center;
+      }
+  </style>
+</head>
+<body>
+
+  <div id="outer-container">
+    <div id="counter-container">
+      <h1> Counter </h1>
+      <h2 id="counter-txt" class="text-readout"> 0 </h2>
+      <button id="start-counting-btn"> Start Counting</button>
+    </div>
+    <div id="calc-container">
+      <h1> Calculator </h1>
+      <h2 id="calc-txt" class="text-readout"> 0 </h2>
+      <button id="start-calc-btn"> Start Calculating</button>
+    </div>
+  </div>
+
+
+  <script src="index.js"></script>
+</body>
+</html>
