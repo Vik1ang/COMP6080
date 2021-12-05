@@ -1,0 +1,45 @@
+body {
+    background: #000000;
+    line-height: 1.8;
+}
+
+* {
+    font-family: Helvetica;
+    color: #7D6A55;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 1398px;
+    height: 655px;
+}
+
+.upper {
+    background: #CCCCCC;
+    display: flex;
+    padding: 50px 100px 50px 100px;
+}
+
+.upper-left {
+    padding-right: 50px;
+    flex: 7;
+}
+
+.upper-right {
+    background: white url("../assets/logo.png") no-repeat 50% 20%;
+    background-size: 90%;
+    height: 200px;
+    margin-top: 38px;
+    margin-left: 10px;
+    flex: 3;
+}
+
+/*.image {*/
+/*    background: #FFFFFF;*/
+/*}*/
+
+.lower {
+    background: #FFFFFF;
+    padding: 50px 480px 50px 100px;
+}

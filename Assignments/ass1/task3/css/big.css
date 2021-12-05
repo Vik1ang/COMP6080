@@ -1,0 +1,214 @@
+* {
+    color: #B6C1CE;
+    font-size: 0.979em;
+}
+
+body {
+    background-color: #141414;
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    width: 100%;
+}
+
+h1 {
+    line-height: 1;
+    font-style: italic;
+    color: #F9F9F9;
+    font-size: 3em;
+}
+
+h2 {
+    color: #F9F9F9;
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+h3 {
+    color: #F9F9F9;
+    font-size: 1.5em;
+}
+
+ul {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+li {
+    margin: 20px 0;
+}
+
+hr {
+    /*margin-top:7px;*/
+    /**margin: 0;*/
+    border: 0;
+    /*color: white;*/
+    background-color: white;
+    height: 1px;
+}
+
+.up-layer {
+    margin-top: 3.42%;
+    margin-left: 3.25%;
+    /*padding-right: 17.46%;*/
+    display: flex;
+    flex: 1;
+    /*flex-flow: column nowrap;*/
+    /*flex-direction: column;*/
+    /*align-items: flex-end;*/
+    /*overflow: hidden;*/
+    height: 40.25%;
+}
+
+.up-layer-half {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+}
+
+.on_hat {
+    /*padding-left: 3.25%;*/
+    padding-right: 17.46%;
+    padding-top: 3.42%;
+    height: 32.49%;
+    /*flex: 1;*/
+
+}
+
+.no-fee {
+    padding: 3.42% 17.46% 7.51% 3.25%;
+    flex: 1;
+}
+
+.fees {
+    /*padding-left: 3.25%;*/
+    /*flex: 50%;*/
+    flex: 1;
+    padding-right: 16%;
+}
+
+.fees ul {
+    list-style-image: url("../assets/tick.svg");
+}
+
+.charge-up {
+    margin-left: 3.25%;
+    margin-right: 4.18%;
+    margin-top: 5.1%;
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 1;
+    background-color: #252525;
+    /*display: flex;*/
+    /*justify-content: flex-start;*/
+    height: 16.8%;
+}
+
+.icon {
+    width: 6.78%;
+    background-image: url("../assets/little-diamond.svg");
+    background-repeat: no-repeat;
+    margin-top: 20px;
+    margin-left: 30px;
+    align-items: flex-start;
+    /*margin-right: 20px;*/
+}
+
+.charge-up-div {
+    display: flex;
+    align-items: flex-start;
+}
+
+.lean-more-div {
+    text-align: right;
+    margin-left: auto;
+    padding-left: 650px;
+}
+
+.learn-more-button {
+    background-color: #252525;
+    color: #F9F9F9;
+    text-align: center;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 160px;
+    height: 30px;
+    border: 1px solid #F9F9F9;
+}
+
+.learn-more-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.sign-up {
+    padding-top: 2.8%;
+    padding-left: 3.25%;
+    opacity: 1.0;
+}
+
+.sign-up:hover {
+    opacity: 0.5;
+}
+
+.sign-up button {
+    background-color: #00B363;
+    border: none;
+    font-size: 16px;
+    color: #F9F9F9;
+    text-align: center;
+    padding: 15px 32px;
+}
+
+.comparison {
+    flex: 1;
+    padding-left: 3.25%;
+    padding-top: 10.93%;
+    padding-right: 4.18%;
+}
+
+.big-table {
+    border-collapse: collapse;
+    /*height: 100%;*/
+    width: 100%;
+}
+
+.big-table tr {
+    border-bottom: 1px solid #333333;
+    height: 70px;
+}
+
+.table-title {
+    text-align: left;
+    width: 38.2%;
+}
+
+.table-us {
+    background-color: #252525;
+    color: #F9F9F9;
+}
+
+.table-company {
+    color: #F9F9F9;
+}
+
+.full-pricing-details {
+    margin-left: 3.25%;
+    margin-top: 2.79%;
+}
+
+.space {
+    flex: 100%;
+}
+
+.comparison-small {
+    display: none;
+    /*visibility: hidden;*/
+}
+
+.charge-up-outer {
+    width: 100%;
+    height: 100%
+}

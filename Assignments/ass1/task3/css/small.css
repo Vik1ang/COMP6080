@@ -1,0 +1,99 @@
+* {
+    color: #B6C1CE;
+    font-size: 0.979em;
+}
+
+h2 {
+    margin-left: 3.25%;
+}
+
+.comparison {
+    display: none;
+}
+
+.up-layer {
+    flex: 100%;
+    flex-direction: column;
+    margin-left: 0;
+}
+
+.fees {
+    /*margin-left: 3.25%;*/
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.small-font {
+    margin-left: 3.25%;
+}
+
+.fees ul {
+    margin-left: 3.25%;
+}
+
+
+.on_hat {
+    flex: 100%;
+    margin-left: 3.25%;
+}
+
+.charge-up {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.icon {
+    background: url("../assets/little-diamond.svg") no-repeat right;
+    padding-right: 30%;
+    margin-top: -7%;
+}
+
+.charge-up-div {
+    /*display: un;*/
+    /*flex: unset;*/
+    flex-direction: column;
+}
+
+.charge-up-div-text {
+    padding-left: 3.25%;
+}
+
+.charge-up-outer {
+    width: 95%;
+}
+
+.lean-more-div {
+    text-align: left;
+    margin-left: 0;
+    padding-left: 3.25%;
+}
+
+.comparison-small {
+    display: flex;
+    flex: 1;
+    padding-left: 3.25%;
+    padding-top: 10.93%;
+    padding-right: 4.18%;
+}
+
+.big-table {
+    border-collapse: collapse;
+    height: 100%;
+    width: 100%;
+}
+
+.big-table tr {
+    border-bottom: 1px solid #333333;
+    height: 70px;
+}
+
+.table-title {
+    text-align: left;
+    width: 15%;
+}
+
+#smale-table-us {
+    background-color: #141414;
+    border-bottom-color: #141414;
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task4</title>
+  <style>
+      tr {
+          border: solid #000000;
+      }
+  </style>
+</head>
+<body>
+
+  <form id="form">
+    <table border="1">
+      <tr>
+        <th>First Name</th>
+        <td>
+          <input type="text" id="firstName">
+        </td>
+      </tr>
+      <tr>
+        <th>Last Name</th>
+        <td><input type="text" id="lastName"></td>
+      </tr>
+      <tr>
+        <th>Date of Birth</th>
+        <td><input type="text" id="birth"></td>
+      </tr>
+      <tr>
+        <th>Favourite animal</th>
+        <td>
+          <select id="favouriteAnimal">
+            <option value="Haloumi">Haloumi</option>
+            <option value="Brie">Brie</option>
+          </select>
+        </td>
+      <tr>
+        <th>Cites lived in</th>
+        <td id="citiesList">
+          <label>
+            <input name="cities" type="checkbox" value="Adelaide">
+            Adelaide
+            <br/>
+          </label>
+          <label>
+            <input name="cities" type="checkbox" value="Perth">
+            Perth
+            <br/>
+          </label>
+          <label>
+            <input name="cities" type="checkbox" value="Hobart">
+            Hobart
+            <br/>
+          </label>
+          <label>
+            <input name="cities" type="checkbox" value="Darwin">
+            Darwin
+            <br/>
+          </label>
+        </td>
+      </tr>
+      </tr>
+    </table>
+    <br/>
+  </form>
+
+  <button id="btn" onclick="remove()">Remove</button>
+  <br/>
+  <br/>
+  <textarea id="textArea" rows="15" cols="70"></textarea>
+
+  <script>
+
+      let result = {
+          firstName: '',
+          lastName: '',
+          birth: '',
+          favouriteAnimal: 'Haloumi',
+          cities: []
+      }
+
+      // first name
+      let first = document.getElementById('firstName');
+      first.onblur = () => {
+          result.firstName = first.value;
+          infoChecked();
+      }
+
+      // last name
+      let last = document.getElementById('lastName');
+      last.onblur = () => {
+          result.lastName = last.value;
+          infoChecked();
+      }
+
+      // Date of Birth
+      const dateRegex = new RegExp('^[0-9]{2}/[0-9]{2}/[0-9]{4}$');
+      let dob = document.getElementById('birth');
+      dob.onblur = () => {
+          result.birth = dob.value;
+          infoChecked();
+      }
+
+      // cheese
+      let animal = document.getElementById('favouriteAnimal');
+      animal.onchange = () => {
+          result.favouriteAnimal = animal.value;
+          infoChecked();
+      }
+
+      // cites
+      let cites = document.getElementById('citiesList');
+      cites.onchange = () => {
+          let cities = document.getElementsByName('cities');
+          let checkedList = [];
+          for (let city in cities) {
+              if (cities[city].checked) {
+                  checkedList.push(cities[city].value)
+              }
+          }
+          result.cities = checkedList;
+          infoChecked();
+      }
+
+      let textArea = document.getElementById('textArea');
+      const infoChecked = () => {
+          let {firstName, lastName, birth, favouriteAnimal, cities} = result;
+          if (firstName.length < 3 || firstName.length > 50) {
+              textArea.value = "Do not enter an invalid firstname";
+              result.firstName = '';
+              return;
+          } else if (lastName.length < 3 || lastName.length > 50) {
+              textArea.value = "Do not enter an invalid lastname";
+              result.lastName = '';
+              return;
+          } else if (!dateRegex.test(birth)) {
+              textArea.value = "Do not enter an invalid date of birth";
+              result.birth = '';
+              return;
+          }
+          const dateParts = birth.split('/');
+          const [dd, mm, yy] = [dateParts[0], dateParts[1] - 1, dateParts[2]];
+          const birthday = new Date(yy, mm, dd);
+          const timeDiff = (new Date().getTime() - birthday.getTime());
+          const age = Math.floor(timeDiff / (24 * 3600 * 365 * 1000))
+
+          let cities_result = "";
+          const citiesArrayLength = cities.length;
+          if (citiesArrayLength === 0) {
+              cities_result = "no cities"
+          } else {
+              for (let citiesResultElement of cities) {
+                  cities_result = cities_result.concat(citiesResultElement, ", ");
+              }
+              cities_result = cities_result.substr(0, cities_result.length - 2);
+          }
+
+
+          textArea.value = "Hello " + firstName + " " + lastName + ", " + "you are " + age + " years old, your favourite cheese is " +
+              favouriteAnimal + " and you've lived in " + cities_result + ".";
+      }
+
+      let form = document.getElementById('form');
+      remove = () => {
+          form.reset();
+          textArea.value = "";
+      }
+  </script>
+
+</body>
+</html>

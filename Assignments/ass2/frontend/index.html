@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Slackr</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- You can add your styles and scripts here -->
+  <link rel="icon" href="assets/slack_icon.ico"/>
+  <link rel="stylesheet" type="text/css" media="screen" href="styles/provided.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <script type="module" src="src/helpers.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg bg-primary">
+      <span class="navbar-brand mb-0 h1">Slackr</span>
+      <div class="navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+
+          <a class="btn p-2" data-toggle="modal" data-target="#loginModal" id="loginNav">Login</a>
+          <div class="modal" id="loginModal" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Login</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="loginEmail">Email</label>
+                      <input type="text" class="form-control" id="loginEmail" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                      <label for="loginPassword">Password</label>
+                      <input type="password" class="form-control" id="loginPassword" placeholder="Enter password">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                      <button type="submit" class="btn btn-primary" id="loginButton">Login</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a class="btn p-2" data-toggle="modal" data-target="#registerModal" id="registerNav">Register</a>
+          <div class="modal" id="registerModal" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Registration</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="RegisterEmail">Email</label>
+                      <input type="email" class="form-control" id="RegisterEmail" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                      <label for="RegisterName">Name</label>
+                      <input type="text" class="form-control" id="RegisterName" placeholder="Enter name">
+                    </div>
+                    <div class="form-group">
+                      <label for="RegisterPassword">Password</label>
+                      <input type="password" class="form-control" id="RegisterPassword" placeholder="Enter password">
+                    </div>
+
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                      <button type="submit" class="btn btn-primary" id="registrationButton">Register</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a class="btn p-2" data-toggle="modal" data-target="#myProfile" id="profileNav">My Profile</a>
+          <div class="modal" id="myProfile" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">My Profile</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <form id="myProfileForm">
+                    <div class="form-group">
+                      <label> Email
+                        <input type="email" class="form-control" name="email">
+                      </label>
+                    </div>
+                    <div class="form-row">
+                      <label>Name
+                        <input type="text" class="form-control" name="name">
+                      </label>
+
+                    </div>
+                    <div class="form-group">
+                      <label>Password
+                        <input type="password" class="form-control" name="password">
+                      </label>
+                      <a class="btn" id="passwordType">show</a>
+                    </div>
+                    <div class="form-group">
+                      <label>Bio
+                        <textarea type="text" class="form-control" name="bio"></textarea>
+                      </label>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                      <div class="card-header">
+                        Avatar
+                      </div>
+                      <img class="card-img-top" id="myProfileImage">
+
+
+                      <div class="custom-file" id="uploadMyProfileImage">
+                        <input type="file" class="custom-file-input">
+                        <label class="custom-file-label"></label>
+                      </div>
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a class="btn p-2" data-toggle="modal" data-target="#logoutModal" id="logoutNav">Logout</a>
+          <div class="modal" id="logoutModal" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Logout</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+                <div class="modal-body">
+                  Do you want to log out
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <button type="submit" class="btn btn-primary" id="logoutButton">Logout</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <br>
+
+  <main role="main">
+
+    <div class="container-fluid">
+      <div class="list-group" id="channelList">
+        <div class="h2">Channels</div>
+        <!--<a href="#" class="list-group-item list-group-item-action">rirst item</a>
+        <a href="#" class="list-group-item list-group-item-action">second item</a>
+        <a href="#" class="list-group-item list-group-item-action">third item</a>-->
+        <!--<a href="#" class="list-group-item list-group-item-action">
+          third item
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#messagesToggle">Details
+          </button>
+        </a>-->
+
+        <div id="channelDetailsModal" class="modal fade" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Channel details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group" style="display: none">
+                    <label for="channelDetailsId">ID</label>
+                    <input type="text" class="form" id="channelDetailsId" placeholder="Enter channel name">
+                  </div>
+                  <div class="form-group">
+                    <label for="channelDetailsName">Name</label>
+                    <input type="text" class="form" id="channelDetailsName" placeholder="Enter channel name">
+                  </div>
+                  <div class="form-group">
+                    <label for="channelDetailsPrivate">Private</label>
+                    <input type="checkbox" id="channelDetailsPrivate" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="channelDetailsDescription">Description</label>
+                    <textarea id="channelDetailsDescription" class="form-control"
+                              placeholder="Enter channel description"></textarea>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="updateChannelDetails">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="joinChannel" class="modal fade" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Join the channel</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" id="joinChannelMessage">
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="joinChannelConfirm">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="leaveChannel" class="modal fade" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Leave the channel</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" id="leaveChannelMessage">
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="leaveChannelConfirm">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <br>
+
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newChannel">Create a new Channel
+      </button>
+      <div class="modal" id="newChannel" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">New Channel</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="newChannelName">Name</label>
+                  <input type="text" class="form-control" id="newChannelName" placeholder="Enter channel name">
+                </div>
+                <div class="form-group">
+                  <label for="newChannelPrivate">Private</label>
+                  <input type="checkbox" id="newChannelPrivate">
+                </div>
+                <div class="form-group">
+                  <label for="newChannelDescription">Description</label>
+                  <textarea id="newChannelDescription" class="form-control"
+                            placeholder="Enter channel description"></textarea>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <button type="submit" class="btn btn-primary" id="newChannelButton">Confirm</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+
+  </main>
+
+  <br>
+
+  <footer class="fixed-bottom">
+    <p>&copy; Slackr</p>
+  </footer>
+
+  <div class="modal" id="messagesToggle" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="h2">Channels</div>
+          <div class="card">
+            <a class="btn btn-danger" data-toggle="modal" href="#pinnedMessageToggle">Pinned</a>
+          </div>
+
+          <a class="btn btn-secondary" type="button" id="inviteDropDownMenu" href="#inviteToggle" data-toggle="modal">Invite</a>
+
+        </div>
+        <div class="modal-body" id="messageWindow" style="overflow-y:scroll">
+          <div class="dropdown-divider"></div>
+
+          <div class="container d-flex">
+            <div class="mt-5" id="messageContent" style="width: 100%">
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="modal-footer d-flex">
+
+          <div class="flex-grow-1 text-center">
+            <a href="#" id="messageNotification"></a>
+          </div>
+
+          <nav aria-label="Page navigation">
+            <ul class="pagination">
+              <li class="page-item" id="previousParent">
+                <a class="page-link" href="#" id="previous">Previous</a>
+              </li>
+              <li class="page-item" id="nextParent">
+                <a class="page-link" href="#" id="next">Next</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="custom-file" id="uploadImages">
+            <input type="file" class="custom-file-input" multiple="multiple">
+            <label class="custom-file-label">
+              <span class="text-center text-muted">upload images</span>
+            </label>
+          </div>
+
+          <div class="flex-grow-1">
+            <label for="sendMessageContent"></label>
+            <textarea id="sendMessageContent" class="form-control" rows="5" placeholder="Type your message"></textarea>
+          </div>
+          <button id="sendMessage" type="button" class="btn btn-primary">Send</button>
+          <button id="closeMessage" type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="pinnedMessageToggle">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Pinned Message</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+        </div>
+        <div class="container"></div>
+        <div class="modal-body" id="pinnedMessageContent">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="editMessageToggle">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">editMessageSendEdit</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+        </div>
+        <div class="container"></div>
+        <div class="modal-body">
+          <label for="editMessageContent"></label>
+          <textarea id="editMessageContent" class="form-control" rows="5">
+          </textarea>
+        </div>
+        <div class="modal-footer">
+          <button id="editMessageSend" type="button" class="btn btn-primary">Send</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="userProfileToggle">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Profile</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="profileEmail">Email</label>
+              <input type="text" class="form-control" id="profileEmail" disabled>
+            </div>
+            <div class="form-group">
+              <label for="profileName">Name</label>
+              <input type="text" class="form-control" id="profileName" disabled>
+            </div>
+            <div class="form-group">
+              <label for="profileBio">Bio</label>
+              <textarea type="text" class="form-control" id="profileBio" disabled></textarea>
+            </div>
+            <div class="card" style="width: 18rem;">
+              <div class="card-header">
+                Avatar
+              </div>
+              <img class="card-img-top" id="profileAvatar">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="imageCarouse">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content modal-xl">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner" id="carousel">
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="errorPopup" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-danger" id="errorPopupTitle">Error</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body bg-danger" id="errorPopupContent">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="successPopup" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-success">Success</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body bg-success" id="successPopupContent">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="inviteToggle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Invite users</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="inviteForm" class="form-group">
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button id="inviteButton" type="button" class="btn btn-primary">invite</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="module" src="src/main.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

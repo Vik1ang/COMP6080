@@ -1,0 +1,30 @@
+body {
+    width: 807px;
+    height: 807px;
+}
+
+table.board {
+    /*margin: 80px auto;*/
+    background: #C8C365;
+    border: solid #000000;
+    /*border-collapse: collapse;*/
+}
+
+td.board {
+    width: 135px;
+    height: 135px;
+    border: solid #000000;
+
+}
+
+tr.board:nth-child(even) td.board:nth-child(odd), tr.board:nth-child(odd) td.board:nth-child(even) {
+    background: #77A26D;
+}
+
+.circle {
+    border: solid #92513D;
+    border-radius: 50%;
+    width: 135px;
+    height: 135px;
+    background-color: #92513D;
+}
